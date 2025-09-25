@@ -1,5 +1,21 @@
 {
   "name": "dramirez-portfolio",
+  "description": "Portfolio personal de Diego Ramírez - Desarrollador de Software",
+  "author": {
+    "name": "Diego Ramírez",
+    "email": "dramirezh@outlook.cl"
+  },
+  "license": "MIT",
+  "keywords": [
+    "Angular",
+    "Portfolio",
+    "Diego Ramírez H",
+    "Desarrollador de Software",
+    "dramirezh"
+  ],
+  "homepage": "TODO",
+  "bugs": "TODO",
+  "repository": "TODO",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -10,29 +26,32 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^17.3.0",
-    "@angular/common": "^17.3.0",
-    "@angular/compiler": "^17.3.0",
-    "@angular/core": "^17.3.0",
-    "@angular/forms": "^17.3.0",
-    "@angular/platform-browser": "^17.3.0",
-    "@angular/platform-browser-dynamic": "^17.3.0",
-    "@angular/router": "^17.3.0",
-    "rxjs": "~7.8.0",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.14.3"
+    "@angular/animations": "^20.3.2",
+    "@angular/common": "^20.3.2",
+    "@angular/compiler": "^20.3.2",
+    "@angular/core": "^20.3.2",
+    "@angular/forms": "^20.3.2",
+    "@angular/platform-browser": "^20.3.2",
+    "@angular/platform-browser-dynamic": "^20.3.2",
+    "@angular/router": "^20.3.2",
+    "@tailwindcss/postcss": "^4.1.13",
+    "postcss": "^8.5.6",
+    "rxjs": "~7.8.2",
+    "tailwindcss": "^4.1.13",
+    "tslib": "^2.8.1",
+    "zone.js": "~0.15.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^17.3.17",
-    "@angular/cli": "^17.3.17",
-    "@angular/compiler-cli": "^17.3.0",
-    "@types/jasmine": "~5.1.0",
-    "jasmine-core": "~5.1.0",
-    "karma": "~6.4.0",
+    "@angular-devkit/build-angular": "^20.3.3",
+    "@angular/cli": "^20.3.3",
+    "@angular/compiler-cli": "^20.3.2",
+    "@types/jasmine": "~5.1.9",
+    "jasmine-core": "~5.11.0",
+    "karma": "~6.4.4",
     "karma-chrome-launcher": "~3.2.0",
-    "karma-coverage": "~2.2.0",
+    "karma-coverage": "~2.2.1",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.4.2"
+    "typescript": "~5.9.2"
   }
 }

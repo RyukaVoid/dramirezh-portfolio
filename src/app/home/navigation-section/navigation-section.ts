@@ -1,5 +1,13 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, inject, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ThemeService } from '../../theme.service';
+import {
+  Sun,
+  Moon,
+  Menu,
+  X,
+  LucideAngularModule
+} from 'lucide-angular';
 
 interface NavItem {
   href: string;
@@ -9,13 +17,23 @@ interface NavItem {
 @Component({
   selector: 'app-navigation-section',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, LucideAngularModule],
   templateUrl: './navigation-section.html',
   styleUrl: './navigation-section.scss'
 })
 export class NavigationSection implements OnInit {
+  // icons
+  readonly sunIcon = Sun;
+  readonly moonIcon = Moon;
+  readonly menuIcon = Menu;
+  readonly xIcon = X;
+
+  private themeService = inject(ThemeService);
+
   scrolled = false;
   isOpen = false;
+
+  isDarkMode = computed(() => this.themeService.isDarkMode());
 
   navItems: NavItem[] = [
     { href: '#home', label: 'Home' },
@@ -41,5 +59,9 @@ export class NavigationSection implements OnInit {
 
   closeMobileMenu() {
     this.isOpen = false;
+  }
+
+  toggleTheme() {
+    this.themeService.toggleTheme();
   }
 }

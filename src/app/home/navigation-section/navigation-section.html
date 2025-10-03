@@ -5,18 +5,39 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center py-4">
       <div class="text-xl font-bold text-foreground">Diego Ramirez H.</div>
-
       <div class="hidden md:flex items-center space-x-8">
-        <a
-          *ngFor="let item of navItems"
-          [href]="item.href"
-          class="text-muted-foreground hover:text-foreground transition-colors duration-200"
+        @for (item of navItems; track item.href) {
+          <a
+            [href]="item.href"
+            class="text-muted-foreground hover:text-foreground transition-colors duration-200"
+          >
+            {{ item.label }}
+          </a>
+        }
+        <button
+          type="button"
+          class="inline-flex items-center justify-center p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary transition-colors duration-200"
+          (click)="toggleTheme()"
+          aria-label="Switch theme"
         >
-          {{ item.label }}
-        </a>
+          <lucide-angular
+            [img]="isDarkMode() ? moonIcon : sunIcon"
+            class="w-5 h-5"
+          ></lucide-angular>
+        </button>
       </div>
-
       <div class="md:hidden flex items-center space-x-4">
+        <button
+          type="button"
+          class="inline-flex items-center justify-center p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary transition-colors duration-200"
+          (click)="toggleTheme()"
+          aria-label="Switch theme"
+        >
+          <lucide-angular
+            [img]="isDarkMode() ? moonIcon : sunIcon"
+            class="w-5 h-5"
+          ></lucide-angular>
+        </button>
         <button
           type="button"
           class="inline-flex items-center justify-center p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary transition-colors duration-200"
@@ -24,43 +45,28 @@
           [attr.aria-expanded]="isOpen"
           aria-label="Abrir menú principal"
         >
-          @if (!isOpen) {
-            <svg
-              class="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          }
-          @if (isOpen) {
-            <svg
-              class="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-          }
+          <lucide-angular
+            [img]="isOpen ? xIcon : menuIcon"
+            class="w-5 h-5"
+          ></lucide-angular>
         </button>
       </div>
     </div>
 
     @if (isOpen) {
-      <div
-        class="md:hidden bg-card border border-border rounded-lg mt-2 p-4 animate-slide-in-from-top duration-200"
-      >
+    <div
+      class="md:hidden bg-card border border-border rounded-lg mt-2 p-4 animate-slide-in-from-top duration-200"
+    >
+      @for (item of navItems; track item.href) {
         <a
-          *ngFor="let item of navItems"
           [href]="item.href"
-          class="block py-2 text-muted-foreground hover:text-foreground transition-colors duration-200"
+          class="block py-2 text-muted-foreground transition-colors duration-200"
           (click)="closeMobileMenu()"
         >
           {{ item.label }}
         </a>
-      </div>
+      }
+    </div>
     }
   </div>
 </nav>

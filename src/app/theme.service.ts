@@ -41,14 +41,12 @@ export class ThemeService {
 
   private applyTheme(isDark: boolean): void {
     const theme = isDark ? 'dark' : 'light';
-    
-    // Add transitioning class for smooth animations
+
     document.documentElement.classList.add('theme-transitioning');
-    
+
     document.documentElement.setAttribute('data-theme', theme);
     document.documentElement.classList.toggle('dark', isDark);
-    
-    // Remove transitioning class after transition completes
+
     setTimeout(() => {
       document.documentElement.classList.remove('theme-transitioning');
     }, 300);

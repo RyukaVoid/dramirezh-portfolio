@@ -70,5 +70,4 @@ export const getParticlesConfig = (isDarkMode: boolean) => {
   };
 };
 
-// Backward compatibility
 export const ParticlesConfig = getParticlesConfig(false);

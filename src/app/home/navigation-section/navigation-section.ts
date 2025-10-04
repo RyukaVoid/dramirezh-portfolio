@@ -22,7 +22,6 @@ interface NavItem {
   styleUrl: './navigation-section.scss'
 })
 export class NavigationSection implements OnInit {
-  // icons
   readonly sunIcon = Sun;
   readonly moonIcon = Moon;
   readonly menuIcon = Menu;

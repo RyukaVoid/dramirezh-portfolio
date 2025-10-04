@@ -88,7 +88,6 @@ $radius: 0.5rem;
   @include generate-css-variables($light-colors);
   --radius: #{$radius};
 
-  // Smooth transitions for theme changes
   transition:
     background-color 0.3s ease-in-out,
     color 0.3s ease-in-out,
@@ -189,7 +188,6 @@ $radius-config: (
 * {
   @include base-border-styles;
 
-  // Smooth transitions for all elements during theme changes
   transition:
     background-color 0.3s ease-in-out,
     color 0.3s ease-in-out,
@@ -202,7 +200,6 @@ $radius-config: (
 body {
   @include base-background-styles;
 
-  // Ensure body also has smooth transitions
   transition:
     background-color 0.3s ease-in-out,
     color 0.3s ease-in-out;
@@ -213,13 +210,11 @@ html {
   @include custom-scrollbar;
 }
 
-// Enhanced transitions during theme switching
 .theme-transitioning * {
   transition-duration: 0.2s !important;
   transition-timing-function: ease-in-out !important;
 }
 
-// Ensure buttons and interactive elements have smooth transitions
 button, a, nav {
   transition:
     background-color 0.3s ease-in-out,
@@ -246,7 +241,6 @@ button, a, nav {
   }
 }
 
-/* Tailwind utility classes for custom colors */
 .text-primary {
   color: var(--primary) !important;
 }

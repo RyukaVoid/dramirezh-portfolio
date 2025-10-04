@@ -31,7 +31,6 @@ export class Home implements OnInit {
   private themeService = inject(ThemeService);
 
   constructor() {
-    // React to theme changes
     effect(() => {
       const isDarkMode = this.themeService.isDarkMode();
       this.invokeParticles(isDarkMode);

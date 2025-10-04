@@ -341,6 +341,11 @@ button, a, nav {
   background-color: var(--card-foreground) !important;
 }
 
+.border {
+  border-width: 1px !important;
+  border-style: solid !important;
+}
+
 .border-primary {
   border-color: var(--primary) !important;
 }

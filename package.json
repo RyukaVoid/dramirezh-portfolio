@@ -13,10 +13,13 @@
     "Desarrollador de Software",
     "dramirezh"
   ],
-  "homepage": "TODO",
-  "bugs": "TODO",
-  "repository": "TODO",
-  "version": "0.0.0",
+  "homepage": "https://dramirezh.dev/",
+  "bugs": "https://github.com/RyukaVoid/dramirezh-portfolio/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RyukaVoid/dramirezh-portfolio.git"
+  },
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
